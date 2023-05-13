@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Uptime Data</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+  <h2>Uptime Data:</h2>
+  <p>Current uptime: <span id="uptime"></span></p>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    updateUptime();
+  });
+
+  function updateUptime() {
+    $.get('/uptime', function(data) {
+      // Sanitize the text by removing any <script> tags
+      data = data.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+
+      // Update the text content of the element with ID "uptime"
+      $('#uptime').text(data);
+    });
+
+    // Call the updateUptime function again in 1 second
+    setTimeout(updateUptime, 1000);
+  }
+</script>
+
+
+
+</body>
+</html>
+
