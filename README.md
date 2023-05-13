@@ -1,4 +1,4 @@
-s# Express EJS Starter
+# Express EJS Starter
 
 This is a starter template for building a web application with [Express](https://expressjs.com/) and [EJS](https://ejs.co/). It comes with basic configuration and some sample code to get started quickly.
 
